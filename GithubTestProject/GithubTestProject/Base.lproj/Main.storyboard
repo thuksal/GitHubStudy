@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="GithubTestProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,8 +21,45 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tsO-yK-xAm">
+                                <rect key="frame" x="62.5" y="70" width="250" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQl-SV-XMu">
+                                <rect key="frame" x="62.5" y="150" width="250" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonMainAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pOj-A8-ceD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ez-yh-hBe">
+                                <rect key="frame" x="62" y="230" width="250" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tsO-yK-xAm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="0UI-th-LhH"/>
+                            <constraint firstItem="5Ez-yh-hBe" firstAttribute="top" secondItem="ZQl-SV-XMu" secondAttribute="bottom" constant="50" id="3WS-dd-NOM"/>
+                            <constraint firstItem="ZQl-SV-XMu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BuA-za-rV9"/>
+                            <constraint firstItem="tsO-yK-xAm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CXb-Q3-xsf"/>
+                            <constraint firstItem="ZQl-SV-XMu" firstAttribute="top" secondItem="tsO-yK-xAm" secondAttribute="bottom" constant="50" id="D5R-Ag-pUh"/>
+                            <constraint firstItem="5Ez-yh-hBe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HSW-Nv-82u"/>
+                            <constraint firstItem="tsO-yK-xAm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="2/3" id="aJV-Lb-r40"/>
+                            <constraint firstItem="5Ez-yh-hBe" firstAttribute="width" secondItem="ZQl-SV-XMu" secondAttribute="width" id="rQV-fZ-Phd"/>
+                            <constraint firstItem="ZQl-SV-XMu" firstAttribute="width" secondItem="tsO-yK-xAm" secondAttribute="width" id="ru7-co-Kpe"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonMain" destination="ZQl-SV-XMu" id="d2t-eb-qKW"/>
+                        <outlet property="labelMain" destination="5Ez-yh-hBe" id="PXH-jf-gzx"/>
+                        <outlet property="textFieldMain" destination="tsO-yK-xAm" id="xpU-Pr-KLd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
